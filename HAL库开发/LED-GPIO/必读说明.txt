@@ -1,0 +1,20 @@
+/****************************************************/
+
+
+开发基础：STM32  F407  VGT6
+【*】 开发流程
+1、在数据参考手册中找到将要使用的GPIOx（x = A、B、C、D......）的基准地址
+
+2、GPIOC挂载在时钟RCC_AHB1上，查询RCC基准地址与RCC_AHB1ENR的偏移地址
+
+3、查阅参考手册，已知要将GPIO配置为推挽输出模式
+
+4、在GPIO寄存器章节，查询
+GPIO 端口模式寄存器 (GPIOx_MODER)、
+GPIO 端口输出类型寄存器 (GPIOx_OTYPER)、
+GPIO 端口输出速度寄存器 (GPIOx_OSPEEDR) 、
+GPIO 端口上拉/下拉寄存器 (GPIOx_PUPDR) 、
+GPIO 端口输出数据寄存器 (GPIOx_ODR)、
+GPIO 端口置位/复位寄存器 (GPIOx_BSRR)
+等寄存器模式配置的偏移地址
+
