@@ -1,22 +1,0 @@
-Dependencies for Project 'LED-GPIO', Target 'Target 1': (DO NOT MODIFY !)
-F (..\..\User\main.c)(0x645CDE87)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\User-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F407xx-o ..\..\objects\main.o --omf_browse ..\..\objects\main.crf --depend ..\..\objects\main.d)
-I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x5A4168CE)
-I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5A4168CA)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\Libraries\CMSIS\Include\core_cmInstr.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Include\cmsis_armcc.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Include\core_cmFunc.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Include\core_cmSimd.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5A4168CE)
-F (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c)(0x5A4168CE)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\Libraries\CMSIS\Include -I ..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I ..\..\User-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F407xx-o ..\..\objects\system_stm32f4xx.o --omf_browse ..\..\objects\system_stm32f4xx.crf --depend ..\..\objects\system_stm32f4xx.d)
-I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x5A4168CE)
-I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x5A4168CE)
-I (..\..\Libraries\CMSIS\Include\core_cm4.h)(0x5A4168CA)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\..\Libraries\CMSIS\Include\core_cmInstr.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Include\cmsis_armcc.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Include\core_cmFunc.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Include\core_cmSimd.h)(0x5A4168CA)
-I (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x5A4168CE)
-F (..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s)(0x5A4168CE)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F40_41xxx SETA 1"--list d:\16638\startup_stm32f407xx.lst --xref -o ..\..\objects\startup_stm32f407xx.o --depend ..\..\objects\startup_stm32f407xx.d)
-F (..\..\±Ø¶ÁËµÃ÷.txt)(0x645CEAFD)()

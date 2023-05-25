@@ -1,8 +1,0 @@
---cpu=Cortex-M4.fp
-"..\..\objects\main.o"
-"..\..\objects\system_stm32f4xx.o"
-"..\..\objects\startup_stm32f407xx.o"
---library_type=microlib --strict --scatter "..\..\Objects\LED-GPIO.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
---info sizes --info totals --info unused --info veneers
---list "D:\16638\LED-GPIO.map" -o ..\..\Objects\LED-GPIO.axf
