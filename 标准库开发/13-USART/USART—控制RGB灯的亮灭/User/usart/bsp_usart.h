@@ -1,5 +1,5 @@
 #ifndef __BSP_USART_H
-#define	__BSP_USART_H
+#define __BSP_USART_H
 
 
 #include "stm32f4xx.h"
@@ -25,11 +25,11 @@
 #define DEBUG_USART_TX_SOURCE                   GPIO_PinSource9
 
 #define DEBUG_USART_IRQHandler                  USART1_IRQHandler
-#define DEBUG_USART_IRQ                 				USART1_IRQn
+#define DEBUG_USART_IRQ                                 USART1_IRQn
 
 void Debug_USART_Config(void);
-void Usart_SendByte( USART_TypeDef * pUSARTx, uint8_t ch);
-void Usart_SendString( USART_TypeDef * pUSARTx, char *str);
+void Usart_SendByte(USART_TypeDef *pUSARTx, uint8_t ch);
+void Usart_SendString(USART_TypeDef *pUSARTx, char *str);
 
 
 #endif /* __BSP_USART_H */
