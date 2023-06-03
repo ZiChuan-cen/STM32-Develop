@@ -10,7 +10,7 @@ static void NVIC_Configuration(void)
 {
     NVIC_InitTypeDef NVIC_InitStructure;
 
-
+	
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);                /* 嵌套向量中断控制器组选择 */
     NVIC_InitStructure.NVIC_IRQChannel = DEBUG_USART_IRQ;          /* 配置USART为中断源 */
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;      /* 抢断优先级为1 */
