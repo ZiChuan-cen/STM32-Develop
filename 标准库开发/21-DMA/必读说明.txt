@@ -1,0 +1,80 @@
+/*********************************************************************************************/
+
+【 *】 程序简介
+-工程名称：工程模版
+-实验平台: 野火STM32 F407  VGT6 开发板
+-MDK版本：5.24
+- ST固件库版本：1.8.0
+
+
+【 ！！】功能简介：
+基于野火STM32F407开发板，所创建的工程模板，以后使用它建立新项目，方便快捷。
+
+/*********************************************************************************************/
+DMA_InitTypeDef结构体说明：
+typedef struct
+{
+    uint32_t DMA_Channel;                   //通道选择
+    uint32_t DMA_PeripheralBaseAddr;        //外设地址
+    uint32_t DMA_Memory0BaseAddr;           //存储器0地址
+    uint32_t DMA_DIR;                       //数据方向
+    uint32_t DMA_BufferSize;                //数据数目
+    uint32_t DMA_PeripheralInc;             //外设递增
+    uint32_t DMA_MemoryInc;                 //存储器递增
+    uint32_t DMA_PeripheralDataSize;        //外设数据宽度
+    uint32_t DMA_MemoryDataSize;            //存储器数据宽度
+    uint32_t DMA_Mode;                      //模式选择
+    uint32_t DMA_Priority;                  //优先级
+    uint32_t DMA_FIFOMode;                  //FIFO模式
+    uint32_t DMA_FIFOThreshold;             //FIFO阈值
+    uint32_t DMA_MemoryBurst;               //存储器突发传输
+    uint32_t DMA_PeripheralBurst;           //外设突发传输
+} DMA_InitTypeDef;
+
+结构体细则：
+DMA Channel                 DMA 请求通道选择，可选通道0至通道7，每个外设对应固定的通道，DMA SxCR: CHSEL[2:0]
+
+DMA_PeripheralBaseAddr      外设地址，DMA SxPAR
+
+DMA_Memory0BaseAddr         存储器0 地址，DMA SxMOAR
+
+DMA_DIR                     传输方向选择，可选外设到存储器、存储器到外设以及存储器到存储器，DMA_SxCR : DIR[1:0]
+
+DMA_BufferSize              设定一次传输的数据个数，DMA_SxNDTR
+
+DMA PeripheralInc           外设地址是否递增，DMA SxCR : PINC
+
+DMA_MemoryInc               存储器地址是否递增，DMA_SxCR : MINC
+
+DMA_PeripheralDataSize      外设数据宽度，可选字节(8 位)、半字(16位)和字(32位)，DMA_SxCR : PSIZE[1:0]
+
+DMA_MemoryDataSize          存储器数据宽度，可选字节字节(8 位)、半字(16位)和字(32位)，DMA_SxCR : MSIZE[1:0]
+
+DMA_Mode                    DMA传输模式选择，可选一次传输或循环传输，DMA_SxCR : CIRC位的值。在存储器到存储器
+							模式的时候，只能是一次传输，即DMA_Mode_Normal模式
+DMA_Priority                优先级，非常高，高，中和低，DMA_SxCR : PL[1:0]
+
+DMA_FIFOMode
+
+DMA_FIFOThreshold
+
+DMA_MemoryBurst
+
+DMA_PeripheralBurst
+/*********************************************************************************************/
+
+【 *】 时钟
+
+A.晶振：
+-外部高速晶振：25MHz
+- RTC晶振：32.768KHz
+
+B.各总线运行时钟：
+-系统时钟 = SYCCLK = AHB1 = 168MHz
+- APB2 = 84MHz
+- APB1 = 42MHz
+
+C.浮点运算单元：
+使能
+
+/*********************************************************************************************/
