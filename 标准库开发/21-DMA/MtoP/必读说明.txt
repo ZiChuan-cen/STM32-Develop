@@ -10,8 +10,9 @@
 【 ！！】功能简介：
 基于野火STM32F407开发板，所创建的工程模板，以后使用它建立新项目，方便快捷。
 
+
 /*********************************************************************************************/
-M to M: FLASH to SRAM，把内部FLASH的数据传输到内部SRAM
+M to P: SRAM to 串口，同时LED灯闪烁，演示DMA传输数据不需要占用CPU
 
 DMA_InitTypeDef结构体说明：
 typedef struct
@@ -53,23 +54,21 @@ DMA_PeripheralDataSize      外设数据宽度，可选字节(8 位)、半字(16位)和字(32位)，
 DMA_MemoryDataSize          存储器数据宽度，可选字节字节(8 位)、半字(16位)和字(32位)，DMA_SxCR : MSIZE[1:0]
 
 DMA_Mode                    DMA传输模式选择，可选一次传输或循环传输，DMA_SxCR : CIRC位的值。在存储器到存储器
-							模式的时候，只能是一次传输，即DMA_Mode_Normal模式。循环传输只针对P -> M，或M ->P
+模式的时候，只能是一次传输，即DMA_Mode_Normal模式。循环传输只针对P -> M，或M ->P
 DMA_Priority                优先级，非常高，高，中和低，DMA_SxCR : PL[1:0]
 
-DMA_FIFOMode				FIFO 模式使能，DMA_SXFCR :DMDIS。在存储器到存储器传输的时候，FIFO自动开启，软件禁止不了
+DMA_FIFOMode                FIFO 模式使能，DMA_SXFCR : DMDIS。在存储器到存储器传输的时候，FIFO自动开启，软件禁止不了
 
-DMA_FIFOThreshold 			FIFO 值选择，1/4、1/2、3/4 和满DMA _SxFCR :FTH[1:0]
+DMA_FIFOThreshold           FIFO 值选择，1 / 4、1 / 2、3 / 4 和满DMA _SxFCR : FTH[1:0]
 
-DMA_MemoryBurst				存储器突发模式选择，单次模式、4节拍8节拍、16节拍，DMA_SxCR:MBURST[1:0]
+DMA_MemoryBurst             存储器突发模式选择，单次模式、4节拍8节拍、16节拍，DMA_SxCR: MBURST[1:0]
 
-DMA_PeripheralBurst			外设突发模式选择，单次模式、4节拍8节拍、16节拍，DMA SxCR :PBURST[1:0]
+DMA_PeripheralBurst         外设突发模式选择，单次模式、4节拍8节拍、16节拍，DMA SxCR : PBURST[1:0]
 /*********************************************************************************************/
 编程要点：
-1、在FLASH中定义好要传输的数据，在SRAM中定义好用来接收FLASH数据的变量
-2、确定使用DMA2，哪个数据流，哪个通道，然后定义成宏，方便修改
-3、初始化DMA主要是配置DMA初始化结构体
-4、编写数据比较函数
-5、编写main函数
+1、初始化串口（可从现有例程移植，不需要使用中断，中断部分代码删除）
+2、配置DMA初始化结构体
+3、编写主函数（开启串口，发送DMA请求）
 /*********************************************************************************************/
 
 【 *】 时钟
