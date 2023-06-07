@@ -7,18 +7,18 @@
 
 //引脚定义
 /*******************************************************/
-//R 红色灯  PA2
-#define LED1_PIN                  GPIO_Pin_2
+//R 红色灯  PA4
+#define LED1_PIN                  GPIO_Pin_4
 #define LED1_GPIO_PORT            GPIOA
 #define LED1_GPIO_CLK             RCC_AHB1Periph_GPIOA
 
-//G 绿色灯  PA3
-#define LED2_PIN                  GPIO_Pin_3
+//G 绿色灯  PA5
+#define LED2_PIN                  GPIO_Pin_5
 #define LED2_GPIO_PORT            GPIOA
 #define LED2_GPIO_CLK             RCC_AHB1Periph_GPIOA
 
-//B 蓝色灯  PA4
-#define LED3_PIN                  GPIO_Pin_4
+//B 蓝色灯  PA3
+#define LED3_PIN                  GPIO_Pin_3
 #define LED3_GPIO_PORT            GPIOA
 #define LED3_GPIO_CLK             RCC_AHB1Periph_GPIOA
 /************************************************************/
@@ -56,8 +56,15 @@
 
 
 /* 直接操作寄存器的方法控制IO */
-#define digitalHi(p,i)           {p->BSRRL=i;}      //设置为高电平
-#define digitalLo(p,i)           {p->BSRRH=i;}      //输出低电平
+//LED高电平亮
+#define digitalHi(p,i)           {p->BSRRH=i;}      //设置为高电平
+#define digitalLo(p,i)           {p->BSRRL=i;}      //输出低电平			
+
+//LED低电平亮
+//#define digitalHi(p,i)           {p->BSRRL=i;}      //设置为高电平
+//#define digitalLo(p,i)           {p->BSRRH=i;}      //输出低电平
+
+
 #define digitalToggle(p,i)   {p->ODR ^=i;}      //输出反转状态
 
 /* 定义控制IO的宏 */

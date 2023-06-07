@@ -30,10 +30,10 @@ int main(void)
 
     while (1)
     {
-        //LED_RED;
-        //delay(0xff);
-        //LED_RGBOFF;
-        //delay(0xff);
+        LED_RED;
+        delay(0xffffff);
+        LED_RGBOFF;
+        delay(0xffffff);
 
     }
 }
