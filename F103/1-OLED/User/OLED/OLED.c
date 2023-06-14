@@ -6,7 +6,7 @@
 /*引脚初始化*/
 void OLED_SPI_Init(void)
 {
-    /********************************** 引脚配置 **********************************/
+/********************************** 引脚配置 **********************************/
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 
@@ -243,6 +243,23 @@ void OLED_ShowBinNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Leng
         OLED_ShowChar(Line, Column + i, Number / OLED_Pow(2, Length - i - 1) % 2 + '0');
     }
 }
+
+///**
+//  * @brief  OLED显示图片
+//  * @param  Line 起始行位置，范围：1~4
+//  * @param  Column 起始列位置，范围：1~16
+//  * @param  
+//  * @param  
+//  * @retval 无
+//  */
+//void OLED_ShowImage();
+//{
+//	
+//}
+
+
+
+
 
 /**
   * @brief  OLED初始化
