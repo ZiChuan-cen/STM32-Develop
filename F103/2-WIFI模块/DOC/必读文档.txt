@@ -1,0 +1,31 @@
+STM32 F103 C8T6工程模板
+
+
+ESP - 01s引脚：
+GND     接地
+IO2     GPIO2 / UART1_TXD
+IO0     GPIO0；下载模式：外部拉低；运行模式：悬空或外部拉高
+RXD     UART0_RXD / GPIO3
+TXD     UART0_TXD / GPIO1
+EN      芯片使能端，高电平有效
+RST     复位
+VCC     3.3V供电（VDD）；外部供电电源输出电流建议在500mA以上
+
+开发板引脚：
+- -PB10  USART3_TX
+--PB11  USART3_RX
+
+ST 公司提供了 3 个启动文件给我们，分别用于不同容量的 STM32 芯片，这三个文件是：
+
+startup_stm32f10x_ld.s
+startup_stm32f10x_md.s
+startup_stm32f10x_hd.s
+
+其中，ld.s适用于小容量产品，md.s适用于中等容量产品，hd.s适用于大容量产品，这里的容量是指FLASH的容量大小
+
+
+判断方法如下：
+
+小容量：FLASH ≤ 32K
+中容量：64K ≤ FLASH ≤ 128K
+大容量：256K ≤ FLASH
