@@ -558,6 +558,9 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Device</GroupName>
+        </Group>
+        <Group>
           <GroupName>DOC</GroupName>
           <Files>
             <File>
