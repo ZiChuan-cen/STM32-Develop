@@ -7,6 +7,7 @@
 
 
 void Hcsr_Init(void);
+float Distance(void);
 
 #endif /* __HCSR04_H */
 

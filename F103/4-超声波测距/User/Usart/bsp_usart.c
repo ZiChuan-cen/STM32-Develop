@@ -31,21 +31,37 @@ void Usart1_Config(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
     GPIO_InitStructure.GPIO_Pin  = USART1_RX_Pin;
     GPIO_Init(USART1_RX_PORT, &GPIO_InitStructure);  //初始化寄存器
+	
+	
+	NVIC_InitTypeDef NVIC_InitStructure;
+	
+	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
 
     /*********************************配置串口*************************************/
     RCC_APB2PeriphClockCmd(USART1_CLK, ENABLE);  //开启串口时钟
     USART_InitTypeDef USART_InitStructure = {0};
 
-    USART_InitStructure.USART_BaudRate = 115200;  //波特率
-    USART_InitStructure.USART_HardwareFlowControl = DISABLE;
+    USART_InitStructure.USART_BaudRate = 115200;		//波特率
+    USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-    USART_InitStructure.USART_Parity = USART_Parity_No;  //不使用奇偶校验
+    USART_InitStructure.USART_Parity = USART_Parity_No;		//不使用奇偶校验
     USART_InitStructure.USART_StopBits = USART_StopBits_1;
     USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	
 
     USART_Init(USART1, &USART_InitStructure); //初始化寄存器
+	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);		//开启串口接受中断
     USART_Cmd(USART1, ENABLE); //使能串口
+	
+	
+	
 }
+
+
 
 
 /**

@@ -31,7 +31,7 @@ int main(void)
 	OLED_ShowNum(2, 4, 1121, 4);
 	OLED_ShowHexNum(3, 6, 0x1122, 4);
 	OLED_ShowSignedNum(4, 8, -99, 2);
-	OLED_Clear();
+	//OLED_Clear();
 
 
     while (1)

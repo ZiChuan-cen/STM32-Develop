@@ -15,17 +15,23 @@
 
 #include "stm32f10x.h"
 #include "bsp_usart.h"
+#include "delay.h"
 #include "HCSR04.h"
 
+
+float dis = 0;
 
 
 int main(void)
 {
-
-
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+	Usart1_Config();
+	Hcsr_Init();
     while (1)
     {
-
+		dis = Distance();
+		printf("%10f \r\n", dis);
+		Delay_ms(1000);
     }
 }
 
