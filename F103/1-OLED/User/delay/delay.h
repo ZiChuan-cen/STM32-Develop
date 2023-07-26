@@ -5,18 +5,11 @@
 
 //40MHZ 40000000
 
-#define delay_1us() {\
-	__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();\
-	__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();\
-	__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();\
-	__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();__NOP();\
-}
 
 
 
-void SysTick_Init(uint32_t tick);
-void Delay_us(uint32_t time);
-void Delay_ms(uint32_t time);
-void Delay(__IO uint32_t nCount);
+void Delay_us(uint32_t xus);
+void Delay_ms(uint32_t xms);
+void Delay_s(uint32_t xs);
 
 #endif	/* __DELAY_H */
