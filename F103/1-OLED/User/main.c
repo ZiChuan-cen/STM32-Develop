@@ -26,14 +26,16 @@ int main(void)
 	OLED_ShowNum(2, 4, 1121, 4);
 	OLED_ShowHexNum(3, 6, 0x1122, 4);
 	OLED_ShowSignedNum(4, 8, -99, 2);
+	Delay_ms(4000);
+	
     OLED_ShowChinese(1, 1, 0);
     OLED_ShowChinese(1, 2, 1);
     OLED_ShowChinese(1, 3, 2);
     OLED_ShowChinese(1, 4, 3);
     OLED_ShowChinese(1, 5, 4);
     OLED_ShowChinese(1, 6, 5);
-	OLED_BMP(3);
-	Delay_ms(2000);
+//	OLED_BMP(3);
+//	Delay_ms(2000);
     //OLED_Clear();
 
     while (1)
