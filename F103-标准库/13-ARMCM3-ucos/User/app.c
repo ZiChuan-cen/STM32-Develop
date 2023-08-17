@@ -59,8 +59,7 @@ void delay(uint32_t count);
 int main(void)
 {	
 	OS_ERR err;
-	
-	
+		
 	
 	/* 初始化相关的全局变量 */
 	OSInit(&err);
