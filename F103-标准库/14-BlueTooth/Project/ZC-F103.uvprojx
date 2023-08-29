@@ -139,7 +139,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay</IncludePath>
+              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\Device\HC05;..\Device\OLED</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -540,6 +540,18 @@
         </Group>
         <Group>
           <GroupName>Device</GroupName>
+          <Files>
+            <File>
+              <FileName>HC05.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\HC05\HC05.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\OLED\OLED.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>USER</GroupName>
