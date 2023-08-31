@@ -36,8 +36,6 @@ __heap_limit
 				IMPORT xPortPendSVHandler
 				IMPORT xPortSysTickHandler
 				IMPORT vPortSVCHandler
-				IMPORT vUARTInterruptHandler
-				IMPORT vTimer2IntHandler
 
                 PRESERVE8
                 THUMB
@@ -94,7 +92,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     TIM1_UP_IRQHandler        ; TIM1 Update
                 DCD     TIM1_TRG_COM_IRQHandler   ; TIM1 Trigger and Commutation
                 DCD     TIM1_CC_IRQHandler        ; TIM1 Capture Compare
-                DCD     vTimer2IntHandler         ; TIM2
+                DCD     0 ;  vTimer2IntHandler         ; TIM2
                 DCD     TIM3_IRQHandler           ; TIM3
                 DCD     TIM4_IRQHandler           ; TIM4
                 DCD     I2C1_EV_IRQHandler        ; I2C1 Event
@@ -103,7 +101,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     I2C2_ER_IRQHandler        ; I2C2 Error
                 DCD     SPI1_IRQHandler           ; SPI1
                 DCD     SPI2_IRQHandler           ; SPI2
-                DCD     vUARTInterruptHandler     ; USART1
+                DCD     0 ; vUARTInterruptHandler     ; USART1
                 DCD     USART2_IRQHandler         ; USART2
                 DCD     USART3_IRQHandler         ; USART3
                 DCD     EXTI15_10_IRQHandler      ; EXTI Line 15..10
