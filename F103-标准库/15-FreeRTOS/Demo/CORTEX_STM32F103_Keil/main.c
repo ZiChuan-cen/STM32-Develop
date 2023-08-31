@@ -66,22 +66,12 @@
 
 /* Library includes. */
 #include "stm32f10x_it.h"
+#include "stm32f10x_lib.h"
 
 #include "serial.h"
+#include "led.h"
 
 
-/* Demo app includes. */
-//#include "lcd.h"
-//#include "LCD_Message.h"
-//#include "BlockQ.h"
-//#include "death.h"
-//#include "integer.h"
-//#include "blocktim.h"
-//#include "partest.h"
-//#include "semtest.h"
-//#include "PollQ.h"
-//#include "flash.h"
-//#include "comtest2.h"
 
 /* Task priorities. */
 #define mainQUEUE_POLL_PRIORITY             ( tskIDLE_PRIORITY + 2 )
@@ -144,13 +134,30 @@ static void prvSetupHardware(void);
  */
 extern void vSetupTimerTest(void);
 
-/*-----------------------------------------------------------*/
+/*-------------------------- 任务创建 ---------------------------------*/
 
+void Task1Fun(void * param)
+{
+	while(1)
+	{
+		
+	}
+}	
+
+void Task2Fun(void * param)
+{
+	while(1)
+	{
+		printf("2");
+	}
+}
 
 /*-----------------------------------------------------------*/
 
 int main(void)
 {
+	TaskHandle_t xHandleTask1;
+	
 #ifdef DEBUG
     debug();
 #endif
@@ -158,6 +165,9 @@ int main(void)
     prvSetupHardware();
 
 	printf("Hello, world!\r\n");
+	
+	xTaskCreate( Task1Fun, "Task_1", 100, NULL, 1, &xHandleTask1 );
+	xTaskCreate( Task2Fun, "Task_2", 100, NULL, 1, NULL );
 
     /* Start the scheduler. */
     vTaskStartScheduler();
