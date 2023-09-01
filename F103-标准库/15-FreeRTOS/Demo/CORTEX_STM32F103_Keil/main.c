@@ -140,7 +140,7 @@ void Task1Fun(void * param)
 {
 	while(1)
 	{
-		
+		printf("1");
 	}
 }	
 
@@ -152,7 +152,35 @@ void Task2Fun(void * param)
 	}
 }
 
+void Task3Fun(void * param)
+{
+	while(1)
+	{
+		printf("3");
+	}
+}
+
 /*-----------------------------------------------------------*/
+
+StackType_t xTask_3Stack[100];
+StaticTask_t xTask_3TCB;
+
+StackType_t xIdleTaskStack[100];
+StaticTask_t xIdleTaskTCB;
+
+/*
+ *The buffers used here have been successfully allocated before (global variables)
+ */
+void vApplicationGetIdleTaskMemory( StaticTask_t ** ppxIdleTaskTCBBuffer,
+							StackType_t ** ppxIdleTaskStackBuffer,
+							uint32_t * pulIdleTaskStackSize)
+{
+	*ppxIdleTaskTCBBuffer = &xIdleTaskTCB;
+	*ppxIdleTaskStackBuffer = xIdleTaskStack;
+	*pulIdleTaskStackSize = 100; 
+}
+
+
 
 int main(void)
 {
@@ -166,8 +194,12 @@ int main(void)
 
 	printf("Hello, world!\r\n");
 	
+	/* 动态创建任务 */
 	xTaskCreate( Task1Fun, "Task_1", 100, NULL, 1, &xHandleTask1 );
 	xTaskCreate( Task2Fun, "Task_2", 100, NULL, 1, NULL );
+	/* 静态创建任务 */
+	xTaskCreateStatic( Task3Fun, "Task_3", 100, NULL, 1, xTask_3Stack, &xTask_3TCB );
+	
 
     /* Start the scheduler. */
     vTaskStartScheduler();
