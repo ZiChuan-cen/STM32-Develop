@@ -57,6 +57,7 @@ void HC05_GetData(char *Buf)
 			RxSTA = 0;
 		}
 		count ++;
+		Buf[a] = 0;
 	}
 
 }

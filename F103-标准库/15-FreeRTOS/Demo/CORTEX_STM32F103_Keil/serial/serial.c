@@ -104,7 +104,7 @@ int fputc(int ch, FILE *f)
 	USART_TypeDef* USARTx = USART1;
 	
 	while((USARTx->SR & (1<<7)) == 0);
-	USARTx->DR = ch;
+	USARTx->DR = ch; 
     return ch;
 }
 

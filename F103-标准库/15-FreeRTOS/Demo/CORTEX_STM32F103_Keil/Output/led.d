@@ -1,0 +1,14 @@
+.\output\led.o: Devices\LED\led.c
+.\output\led.o: Devices\LED\led.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_lib.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_map.h
+.\output\led.o: ..\CORTEX_STM32F103_Keil\stm32f10x_conf.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_type.h
+.\output\led.o: .\STM32F10xFWLib\inc\cortexm3_macro.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_exti.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_gpio.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_nvic.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_rcc.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_spi.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_systick.h
+.\output\led.o: .\STM32F10xFWLib\inc\stm32f10x_usart.h

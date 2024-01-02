@@ -136,31 +136,9 @@ extern void vSetupTimerTest(void);
 
 /*-------------------------- 任务创建 ---------------------------------*/
 
-void Task1Fun(void * param)
-{
-	while(1)
-	{
-		printf("1");
-	}
-}	
 
-void Task2Fun(void * param)
-{
-	while(1)
-	{
-		printf("2");
-	}
-}
-
-void Task3Fun(void * param)
-{
-	while(1)
-	{
-		printf("3");
-	}
-}
-
-/*-----------------------------------------------------------*/
+TaskHandle_t xHandleTask1;
+TaskHandle_t xHandleTask3;
 
 StackType_t xTask_3Stack[100];
 StaticTask_t xTask_3TCB;
@@ -168,38 +146,114 @@ StaticTask_t xTask_3TCB;
 StackType_t xIdleTaskStack[100];
 StaticTask_t xIdleTaskTCB;
 
+static int task1flagrun = 0;
+static int task2flagrun = 0;
+static int task3flagrun = 0;
+
+static int rands[] = {3, 56, 23, 5, 99};
+
+/*---------------------------- 任务声明 ----------------------------*/
+void Task_1Fun(void *param);
+void Task_2Fun(void *param);
+void Task_3Fun(void *param);
+
+/*-----------------------------------------------------------------*/
+
+void Task_1Fun(void *param)
+{
+	TaskHandle_t xHandleTask2;
+	
+	BaseType_t xReturn;
+	
+	while (1)
+    {
+
+		printf("1");
+
+		
+		xReturn = xTaskCreate(Task_2Fun, "Task_2", 100, NULL, 2, &xHandleTask2);
+		if(xReturn != pdPASS)
+		{
+			printf("Task_1 Creat err \r\n");
+		}
+		vTaskDelete(xHandleTask2);
+	}
+}
+
+void Task_2Fun(void *param)
+{
+	while (1)
+    {
+//        task1flagrun = 0;
+//        task2flagrun = 1;
+//        task3flagrun = 0;
+        printf("2");
+		
+		vTaskDelay(2);		
+    }
+}
+
+void Task_3Fun(void *param)
+{
+    while (1)
+    {
+        task1flagrun = 0;
+        task2flagrun = 0;
+        task3flagrun = 1;
+        printf("3");
+    }
+}
+
+void TaskGenericFun(void *param)
+{
+	int val = (int)param;
+	
+    while (1)
+    {
+        printf("%d", val);
+    }
+}
+
+/*-----------------------------------------------------------*/
+
+
+
 /*
  *The buffers used here have been successfully allocated before (global variables)
  */
-void vApplicationGetIdleTaskMemory( StaticTask_t ** ppxIdleTaskTCBBuffer,
-							StackType_t ** ppxIdleTaskStackBuffer,
-							uint32_t * pulIdleTaskStackSize)
+void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer,
+                                   StackType_t **ppxIdleTaskStackBuffer,
+                                   uint32_t *pulIdleTaskStackSize)
 {
-	*ppxIdleTaskTCBBuffer = &xIdleTaskTCB;
-	*ppxIdleTaskStackBuffer = xIdleTaskStack;
-	*pulIdleTaskStackSize = 100; 
+    *ppxIdleTaskTCBBuffer = &xIdleTaskTCB;
+    *ppxIdleTaskStackBuffer = xIdleTaskStack;
+    *pulIdleTaskStackSize = 100;
 }
 
 
 
 int main(void)
 {
-	TaskHandle_t xHandleTask1;
-	
+
 #ifdef DEBUG
     debug();
 #endif
 
     prvSetupHardware();
 
-	printf("Hello, world!\r\n");
+    printf("Hello, world!\r\n");
+
+    /* 动态创建任务 */
+    xTaskCreate(Task_1Fun, "Task_1", 100, NULL, 1, &xHandleTask1);
+    //xTaskCreate(Task_2Fun, "Task_2", 100, NULL, 1, NULL);
 	
-	/* 动态创建任务 */
-	xTaskCreate( Task1Fun, "Task_1", 100, NULL, 1, &xHandleTask1 );
-	xTaskCreate( Task2Fun, "Task_2", 100, NULL, 1, NULL );
-	/* 静态创建任务 */
-	xTaskCreateStatic( Task3Fun, "Task_3", 100, NULL, 1, xTask_3Stack, &xTask_3TCB );
+    /* 静态创建任务 */
+    //xHandleTask3 = xTaskCreateStatic(Task_3Fun, "Task_3", 100, NULL, 1, xTask_3Stack, &xTask_3TCB);
 	
+	
+//	xTaskCreate(TaskGenericFun, "Task_4", 100, (void *)4, 1, NULL);
+//    xTaskCreate(TaskGenericFun, "Task_5", 100, (void *)5, 1, NULL);
+
 
     /* Start the scheduler. */
     vTaskStartScheduler();
@@ -274,9 +328,9 @@ static void prvSetupHardware(void)
 
     /* Configure HCLK clock as SysTick clock source. */
     SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK);
-	
-	SerialPortInit();
-	
+
+    SerialPortInit();
+
 
 }
 /*-----------------------------------------------------------*/
