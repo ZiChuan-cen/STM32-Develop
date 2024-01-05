@@ -44,7 +44,7 @@ void HC05_SendString(char *Buf)
     Serial_Printf(Buf);
 }
 
-void HC05_GetData(char *Buf)
+void HC05_GetData(int *Buf)
 {
     uint32_t count = 0, a = 0;
     while (count < 10000)

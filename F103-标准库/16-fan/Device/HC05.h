@@ -12,7 +12,7 @@ void BlueTooth_Init(void);
 void HC05_EnterAT(void);
 void HC05_ExitAT(void);
 void HC05_SendString(char *Buf);
-void HC05_GetData(char *Buf);
+void HC05_GetData(int *Buf);
 
 
 #endif  /* __HC05_H */

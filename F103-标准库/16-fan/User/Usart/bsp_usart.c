@@ -15,6 +15,42 @@
 uint8_t Serial_RxData;
 uint8_t Serial_RxFlag;
 
+/**
+    * @brief  配置USART1
+	* @pin	  UART1_TX:PA9	UART1_RX:PA10
+    * @param  无
+    * @retval 无
+    */
+void Usart1_Config(void)
+{	
+/*********************************配置GPIO*************************************/	
+	RCC_APB2PeriphClockCmd(USART1_GPIO_CLK, ENABLE);	
+	GPIO_InitTypeDef GPIO_InitStructure = {0};
+	//PA9
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;  //复用推挽输出
+	GPIO_InitStructure.GPIO_Pin  = USART1_TX_Pin;
+	GPIO_InitStructure.GPIO_Speed= GPIO_Speed_50MHz;
+	GPIO_Init(USART1_TX_PORT, &GPIO_InitStructure);//初始化寄存器	
+	//PA10
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_InitStructure.GPIO_Pin  = USART1_RX_Pin;	
+	GPIO_Init(USART1_RX_PORT, &GPIO_InitStructure);  //初始化寄存器
+	
+/*********************************配置串口*************************************/	
+	RCC_APB2PeriphClockCmd(USART1_CLK, ENABLE);  //开启串口时钟	
+	USART_InitTypeDef USART_InitStructure = {0};
+	
+	USART_InitStructure.USART_BaudRate = 115200;  //波特率
+	USART_InitStructure.USART_HardwareFlowControl = DISABLE;
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx; 
+	USART_InitStructure.USART_Parity = USART_Parity_No;  //不使用奇偶校验
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	
+	USART_Init(USART1, &USART_InitStructure); //初始化寄存器	
+	USART_Cmd(USART1, ENABLE); //使能串口	
+}
+
 
 
 void Usart2_Config(void)
