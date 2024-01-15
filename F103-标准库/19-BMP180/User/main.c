@@ -25,11 +25,22 @@ int main(void)
     while (1)
     {
 		BMP_UncompemstatedToTrue();
+		
 		display_GB2312_string(0, 0, "ÎÂ¶È£º");
-		Display_Byte(0, 8, bmp180.Temp/1000);
+		Display_Byte(0, 7, bmp180.Temp/100);
+		Display_Byte(0, 9, bmp180.Temp/10%10);
+		
         display_GB2312_string(1, 0, "ÆøÑ¹£º");
-		Display_Byte(1, 8, bmp180.p/1000);
-		//printf("\r\nPress:%ld\r\n",bmp180.p);
+		Display_Byte(1, 7, bmp180.p/100000);
+		Display_Byte(1, 9, bmp180.p/10000%10);
+		Display_Byte(1, 11, bmp180.p/1000%100);
+		Display_Byte(1, 13, bmp180.p/100%1000);
+		
+//		display_GB2312_string(2, 0, "º£°Î£º");
+//		Display_Byte(2, 7, bmp180.altitude);
+//		Display_Byte(2, 9, bmp180.altitude);		
+//		printf("\r\naltitudes:%ld\r\n",bmp180.altitude);
+//		delay_s(2);
 
     }
 }
