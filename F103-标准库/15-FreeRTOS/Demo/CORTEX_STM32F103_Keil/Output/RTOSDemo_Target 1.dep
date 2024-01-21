@@ -1,203 +1,0 @@
-Dependencies for Project 'RTOSDemo', Target 'Target 1': (DO NOT MODIFY !)
-F (.\STM32F10x.s)(0x64F05C60)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F10X_HD SETA 1"--list .\listing\stm32f10x.lst --xref -o .\output\stm32f10x.o --depend .\output\stm32f10x.d)
-F (..\Common\drivers\ST\STM32F10xFWLib\src\cortexm3_macro_rvds.s)(0x64020DFE)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F10X_HD SETA 1"--list .\listing\cortexm3_macro_rvds.lst --xref -o .\output\cortexm3_macro_rvds.o --depend .\output\cortexm3_macro_rvds.d)
-F (.\STM32F10xFWLib\src\stm32f10x_usart.c)(0x64020DFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_usart.o --omf_browse .\output\stm32f10x_usart.crf --depend .\output\stm32f10x_usart.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_usart.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-F (.\STM32F10xFWLib\src\stm32f10x_gpio.c)(0x64F0861F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_gpio.o --omf_browse .\output\stm32f10x_gpio.crf --depend .\output\stm32f10x_gpio.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_gpio.h)(0x64F0861F)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-F (.\STM32F10xFWLib\src\stm32f10x_lib.c)(0x64020DFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_lib.o --omf_browse .\output\stm32f10x_lib.crf --depend .\output\stm32f10x_lib.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_lib.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_exti.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_gpio.h)(0x64F0861F)
-I (.\STM32F10xFWLib\inc\stm32f10x_nvic.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_spi.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_systick.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_usart.h)(0x64020DFE)
-F (.\STM32F10xFWLib\src\stm32f10x_nvic.c)(0x64020DFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_nvic.o --omf_browse .\output\stm32f10x_nvic.crf --depend .\output\stm32f10x_nvic.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_nvic.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-F (.\STM32F10xFWLib\src\stm32f10x_rcc.c)(0x64020DFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_rcc.o --omf_browse .\output\stm32f10x_rcc.crf --depend .\output\stm32f10x_rcc.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-F (.\STM32F10xFWLib\src\stm32f10x_spi.c)(0x64020DFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_spi.o --omf_browse .\output\stm32f10x_spi.crf --depend .\output\stm32f10x_spi.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_spi.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-F (.\STM32F10xFWLib\src\stm32f10x_systick.c)(0x64020DFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_systick.o --omf_browse .\output\stm32f10x_systick.crf --depend .\output\stm32f10x_systick.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_systick.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-F (.\STM32F10xFWLib\src\stm32f10x_tim.c)(0x64020DFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\stm32f10x_tim.o --omf_browse .\output\stm32f10x_tim.crf --depend .\output\stm32f10x_tim.d)
-I (.\STM32F10xFWLib\inc\stm32f10x_tim.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-F (.\Devices\LED\led.c)(0x64F0829D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\led.o --omf_browse .\output\led.crf --depend .\output\led.d)
-I (Devices\LED\led.h)(0x64F082ED)
-I (.\STM32F10xFWLib\inc\stm32f10x_lib.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_exti.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_gpio.h)(0x64F0861F)
-I (.\STM32F10xFWLib\inc\stm32f10x_nvic.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_spi.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_systick.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_usart.h)(0x64020DFE)
-F (.\serial\serial.c)(0x64F722F0)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\serial.o --omf_browse .\output\serial.crf --depend .\output\serial.d)
-I (..\..\Source\include\FreeRTOS.h)(0x64020E50)
-I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\CORTEX_STM32F103_Keil\FreeRTOSConfig.h)(0x64F81D83)
-I (..\..\Source\include\projdefs.h)(0x64020E50)
-I (..\..\Source\include\portable.h)(0x64020E50)
-I (..\..\Source\include\deprecated_definitions.h)(0x64020E50)
-I (..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h)(0x64020E50)
-I (..\..\Source\include\mpu_wrappers.h)(0x64020E50)
-I (..\..\Source\include\queue.h)(0x64020E50)
-I (..\..\Source\include\task.h)(0x64020E50)
-I (..\..\Source\include\list.h)(0x64020E50)
-I (..\..\Source\include\semphr.h)(0x64020E50)
-I (.\STM32F10xFWLib\inc\stm32f10x_lib.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_exti.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_gpio.h)(0x64F0861F)
-I (.\STM32F10xFWLib\inc\stm32f10x_nvic.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_spi.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_systick.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_usart.h)(0x64020DFE)
-I (..\Common\include\serial.h)(0x64F05AAE)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x64D1B1A4)
-F (.\main.c)(0x64F817BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x64D1B1A4)
-I (..\..\Source\include\FreeRTOS.h)(0x64020E50)
-I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\CORTEX_STM32F103_Keil\FreeRTOSConfig.h)(0x64F81D83)
-I (..\..\Source\include\projdefs.h)(0x64020E50)
-I (..\..\Source\include\portable.h)(0x64020E50)
-I (..\..\Source\include\deprecated_definitions.h)(0x64020E50)
-I (..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h)(0x64020E50)
-I (..\..\Source\include\mpu_wrappers.h)(0x64020E50)
-I (..\..\Source\include\task.h)(0x64020E50)
-I (..\..\Source\include\list.h)(0x64020E50)
-I (..\..\Source\include\queue.h)(0x64020E50)
-I (.\STM32F10xFWLib\inc\stm32f10x_it.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_lib.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_map.h)(0x64020DFE)
-I (..\CORTEX_STM32F103_Keil\stm32f10x_conf.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_type.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\cortexm3_macro.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_exti.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_gpio.h)(0x64F0861F)
-I (.\STM32F10xFWLib\inc\stm32f10x_nvic.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_rcc.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_spi.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_systick.h)(0x64020DFE)
-I (.\STM32F10xFWLib\inc\stm32f10x_usart.h)(0x64020DFE)
-I (..\Common\include\serial.h)(0x64F05AAE)
-I (.\Devices\LED\led.h)(0x64F082ED)
-F (..\..\Source\tasks.c)(0x64020E50)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\tasks.o --omf_browse .\output\tasks.crf --depend .\output\tasks.d)
-I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (..\..\Source\include\FreeRTOS.h)(0x64020E50)
-I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\CORTEX_STM32F103_Keil\FreeRTOSConfig.h)(0x64F81D83)
-I (..\..\Source\include\projdefs.h)(0x64020E50)
-I (..\..\Source\include\portable.h)(0x64020E50)
-I (..\..\Source\include\deprecated_definitions.h)(0x64020E50)
-I (..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h)(0x64020E50)
-I (..\..\Source\include\mpu_wrappers.h)(0x64020E50)
-I (..\..\Source\include\task.h)(0x64020E50)
-I (..\..\Source\include\list.h)(0x64020E50)
-I (..\..\Source\include\timers.h)(0x64020E50)
-I (..\..\Source\include\stack_macros.h)(0x64020E50)
-F (..\..\Source\list.c)(0x64020E50)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\list.o --omf_browse .\output\list.crf --depend .\output\list.d)
-I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (..\..\Source\include\FreeRTOS.h)(0x64020E50)
-I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\CORTEX_STM32F103_Keil\FreeRTOSConfig.h)(0x64F81D83)
-I (..\..\Source\include\projdefs.h)(0x64020E50)
-I (..\..\Source\include\portable.h)(0x64020E50)
-I (..\..\Source\include\deprecated_definitions.h)(0x64020E50)
-I (..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h)(0x64020E50)
-I (..\..\Source\include\mpu_wrappers.h)(0x64020E50)
-I (..\..\Source\include\list.h)(0x64020E50)
-F (..\..\Source\queue.c)(0x64020E50)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\queue.o --omf_browse .\output\queue.crf --depend .\output\queue.d)
-I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (..\..\Source\include\FreeRTOS.h)(0x64020E50)
-I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\CORTEX_STM32F103_Keil\FreeRTOSConfig.h)(0x64F81D83)
-I (..\..\Source\include\projdefs.h)(0x64020E50)
-I (..\..\Source\include\portable.h)(0x64020E50)
-I (..\..\Source\include\deprecated_definitions.h)(0x64020E50)
-I (..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h)(0x64020E50)
-I (..\..\Source\include\mpu_wrappers.h)(0x64020E50)
-I (..\..\Source\include\task.h)(0x64020E50)
-I (..\..\Source\include\list.h)(0x64020E50)
-I (..\..\Source\include\queue.h)(0x64020E50)
-F (..\..\Source\portable\RVDS\ARM_CM3\port.c)(0x64020E50)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\port.o --omf_browse .\output\port.crf --depend .\output\port.d)
-I (..\..\Source\include\FreeRTOS.h)(0x64020E50)
-I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\CORTEX_STM32F103_Keil\FreeRTOSConfig.h)(0x64F81D83)
-I (..\..\Source\include\projdefs.h)(0x64020E50)
-I (..\..\Source\include\portable.h)(0x64020E50)
-I (..\..\Source\include\deprecated_definitions.h)(0x64020E50)
-I (..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h)(0x64020E50)
-I (..\..\Source\include\mpu_wrappers.h)(0x64020E50)
-I (..\..\Source\include\task.h)(0x64020E50)
-I (..\..\Source\include\list.h)(0x64020E50)
-F (..\..\Source\portable\MemMang\heap_2.c)(0x64020E50)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\CORTEX_STM32F103_Keil -I ..\Common\include -I ..\..\Source\include -I .\STM32F10xFWLib\inc -I .\Devices\LED-I.\RTE\_Target_1-ID:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_HD -DRVDS_ARMCM3_LM3S102-o .\output\heap_2.o --omf_browse .\output\heap_2.crf --depend .\output\heap_2.d)
-I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (..\..\Source\include\FreeRTOS.h)(0x64020E50)
-I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (..\CORTEX_STM32F103_Keil\FreeRTOSConfig.h)(0x64F81D83)
-I (..\..\Source\include\projdefs.h)(0x64020E50)
-I (..\..\Source\include\portable.h)(0x64020E50)
-I (..\..\Source\include\deprecated_definitions.h)(0x64020E50)
-I (..\..\Source\include\../../Source/portable/RVDS/ARM_CM3/portmacro.h)(0x64020E50)
-I (..\..\Source\include\mpu_wrappers.h)(0x64020E50)
-I (..\..\Source\include\task.h)(0x64020E50)
-I (..\..\Source\include\list.h)(0x64020E50)
-F (.\DOC\Readme.txt)(0x64F05DC1)()
