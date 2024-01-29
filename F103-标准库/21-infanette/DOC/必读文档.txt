@@ -40,9 +40,9 @@ ESP8266 wifi热点 + LCD12864液晶 + 按键 + 蜂鸣器
 ADXL345     OK
 DS18B20     OK
 ESP8266
-FLASH
-KEY
-MAX30102
+FLASH       OK
+KEY			OK
+MAX30102    OK
 DHT11       OK
 
 

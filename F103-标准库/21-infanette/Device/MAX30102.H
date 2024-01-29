@@ -15,7 +15,7 @@
 
 //---------------------------------- 宏定义IO口  ----------------------------------------------//
 
-#define Max30102_RCC_Port		RCC_APB2Periph_GPIOB		/* GPIO端口时钟 */
+#define Max30102_RCC_Port()		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE)		/* GPIO端口时钟 */
 
 #define Max30102_SCL_Port		GPIOB							/* GPIO端口 */
 #define Max30102_SCL_PIN		GPIO_Pin_13						/* GPIO引脚 */
@@ -26,14 +26,19 @@
 
 
 /*************************** 定义读写SCL和SDA的宏 ***************************/
-#define Max30102_SCL(a)			if (a)	\
+#define Max30102_SCL(a)			if(a)	\
 								GPIO_SetBits(Max30102_SCL_Port,Max30102_SCL_PIN);\
 								else		\
-								GPIO_ResetBits((Max30102_SCL_Port,Max30102_SCL_PIN))
-#define Max30102_SDA(a)			if (a)	\
+								GPIO_ResetBits(Max30102_SCL_Port,Max30102_SCL_PIN)
+#define Max30102_SDA(a)			if(a)	\
 								GPIO_SetBits(Max30102_SDA_Port,Max30102_SDA_PIN);\
 								else		\
 								GPIO_ResetBits(Max30102_SDA_Port,Max30102_SDA_PIN)
+							
+								
+								
+								
+								
 
 #define Max30102_SCL_READ()		 GPIO_ReadInputDataBit(Max30102_SCL_Port,Max30102_SCL_PIN)
 #define Max30102_SDA_READ()		 GPIO_ReadInputDataBit(Max30102_SDA_Port,Max30102_SDA_PIN)
@@ -76,6 +81,46 @@
 
 
 
+void MAX30102_GPIO_Init(void);
+void i2c_Start(void);
+void i2c_Stop(void);
+void i2c_SendByte(uint8_t _ucByte);
+uint8_t i2c_ReadByte(void);
+uint8_t i2c_WaitAck(void);
+void i2c_Ack(void);
+void i2c_NAck(void);
+uint8_t i2c_CheckDevice(uint8_t _Address);
+
+
+bool maxim_max30102_init(void);
+bool maxim_max30102_read_fifo(uint32_t *pun_red_led, uint32_t *pun_ir_led);
+bool maxim_max30102_write_reg(uint8_t uch_addr, uint8_t uch_data);
+bool maxim_max30102_read_reg(uint8_t uch_addr, uint8_t *puch_data);
+bool maxim_max30102_reset(void);
+
+
+
+#define FS 50    //sampling frequency
+#define BUFFER_SIZE  (FS* 3) 
+#define MA4_SIZE  4 // DONOT CHANGE
+#define min(x,y) ((x) < (y) ? (x) : (y))
+
+
+static  int32_t an_x[ BUFFER_SIZE]; //ir
+static  int32_t an_y[ BUFFER_SIZE]; //red
+
+void maxim_heart_rate_and_oxygen_saturation(uint32_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint32_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid, int32_t *pn_heart_rate, int8_t *pch_hr_valid);
+void maxim_find_peaks(int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, int32_t n_min_height, int32_t n_min_distance, int32_t n_max_num);
+void maxim_peaks_above_min_height(int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, int32_t n_min_height);
+void maxim_remove_close_peaks(int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x, int32_t n_min_distance);
+void maxim_sort_ascend(int32_t  *pn_x, int32_t n_size);
+void maxim_sort_indices_descend(int32_t  *pn_x, int32_t *pn_indx, int32_t n_size);
+
+
+extern int32_t heat_value;
+extern int32_t spo2_value;
+extern int8_t ReadMAX30102OK;
+extern void Max30102_Heart_Spo2_Value(void);
 
 
 

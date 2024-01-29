@@ -125,6 +125,8 @@ void Usart3_Config(void)
 
 
 
+
+
 //printf÷ÿ∂®œÚ
 int fputc(int c, FILE *stream)
 {
@@ -133,6 +135,8 @@ int fputc(int c, FILE *stream)
     return c;
 }
 
+
+USART_SendData
 
 
 
