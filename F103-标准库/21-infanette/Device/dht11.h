@@ -28,10 +28,10 @@ typedef struct
 {
     uint16_t Tem;
     uint16_t Hum;
-} DHT11Data_TypeDef;
+} DHT11_Data_TypeDef;
 
 
-u8 Dht11_ReadData(DHT11Data_TypeDef *dht11);
+u8 Dht11_ReadData(DHT11_Data_TypeDef *dht11);
 u8 DHT11_Check(void);
 
 #endif  /* __DHT11_H */

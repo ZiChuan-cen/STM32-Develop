@@ -47,7 +47,7 @@ void Change_Dht11_Mode(DHT11Mode_TypeDef mode)
     * @param  нч
     * @retval data
     */
-u8 Dht11_ReadData(DHT11Data_TypeDef *data)
+u8 Dht11_ReadData(DHT11_Data_TypeDef *data)
 {
     u8 Data[5] = {0};
 

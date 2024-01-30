@@ -136,8 +136,6 @@ int fputc(int c, FILE *stream)
 }
 
 
-USART_SendData
-
 
 
 

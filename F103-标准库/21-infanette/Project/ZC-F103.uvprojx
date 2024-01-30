@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>工程模板</TargetName>
+      <TargetName>婴儿床</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\Device</IncludePath>
+              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\Device;..\User\sys</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -580,6 +580,11 @@
               <FileType>1</FileType>
               <FilePath>..\Device\usermain.c</FilePath>
             </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\oled.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -609,6 +614,11 @@
               <FileName>bsp_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Usart\bsp_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\sys\sys.c</FilePath>
             </File>
           </Files>
         </Group>
