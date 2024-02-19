@@ -173,7 +173,9 @@ void Key_Dispose()
 void OLED_Display(void)
 {
     OLED_Init();
-
+    display_GB2312_string(0, 0, "Êª¶È");
+    Display_Byte(0, 2, Humi / 10 % 10);
+    Display_Byte(0, 4, Humi / 10 % 10);
 
 
 
