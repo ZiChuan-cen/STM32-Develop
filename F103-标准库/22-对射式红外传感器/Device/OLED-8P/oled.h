@@ -1,5 +1,5 @@
+#ifndef _OLED_H_
 #define _OLED_H_
-#ifdef _OLED_H_
 
 #include "sys.h"
 

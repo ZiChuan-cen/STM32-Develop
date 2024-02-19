@@ -10,6 +10,7 @@
       <TargetName>C8T6</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pArmCC>5060528::V5.06 update 5 (build 528)::ARMCC</pArmCC>
       <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
@@ -336,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\Device\OLED-8P</IncludePath>
+              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\User\sys;..\Device\OLED-8P;..\Device\CountSensor</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -545,6 +546,11 @@
               <FileType>1</FileType>
               <FilePath>..\Device\OLED-8P\oled.c</FilePath>
             </File>
+            <File>
+              <FileName>CountSensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\CountSensor\CountSensor.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -574,6 +580,11 @@
               <FileName>bsp_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Usart\bsp_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\sys\sys.c</FilePath>
             </File>
           </Files>
         </Group>
