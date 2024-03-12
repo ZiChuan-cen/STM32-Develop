@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>工程模板</TargetName>
+      <TargetName>PWM驱动</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>

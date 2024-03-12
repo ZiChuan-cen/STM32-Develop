@@ -15,9 +15,14 @@ startup_stm32f10x_hd.s
 中容量：64K ≤ FLASH ≤ 128K
 大容量：256K ≤ FLASH
 
+PWM频率		Freq = CK_PSC /(PSC +1)/ARR +1)
+PWM占空比	Duty = CCR /(ARR + 1)
+PWM分辨率	Reso = 1/(ARR +1)
+
 
 
 信号线接PB5
 
 0 - 180°舵机
-建议5V供电，恢复到0度时，舵机会颤抖，建议加强延时时间
+建议5V供电
+恢复到0度时，舵机会颤抖，建议加强延时时间
