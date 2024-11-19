@@ -4,7 +4,7 @@
 #include "sys.h"
 
 
-/* the macro definition to trigger the led on or off 
+/* the macro definition to trigger the led on or off
  * 1 - off
  - 0 - on
  */
@@ -36,7 +36,7 @@
 					GPIO_SetBits(OLED_CS1_Group,OLED_CS1_GPIO);\
 					else		\
 					GPIO_ResetBits(OLED_CS1_Group,OLED_CS1_GPIO)
-					
+
 #define lcd_rs(a)	if (a)	\
 					GPIO_SetBits(OLED_rs_Group,OLED_rs_GPIO);\
 					else		\
@@ -70,11 +70,11 @@ extern unsigned char const lei1[];
 
 
 /*写指令到LCD模块*/
-void transfer_command_lcd(int data1);   
+void transfer_command_lcd(int data1);
 /*写数据到LCD模块*/
 void transfer_data_lcd(int data1);
 /*延时*/
-void delay(int n_ms);               
+void delay(int n_ms);
 /*LCD模块初始化*/
 void OLED_Init(void);
 void lcd_address(unsigned char page,unsigned char column);
@@ -98,7 +98,7 @@ static unsigned char get_data_from_ROM(void);
 /*连续读取*/
 void get_n_bytes_data_from_ROM(unsigned char addrHigh,unsigned char addrMid,unsigned char addrLow,unsigned char *pBuff,unsigned char DataLen );
 /******************************************************************/
-void display_GB2312_string(unsigned char y,unsigned char x, char *text);//-- y：0,1,2,3   
+void display_GB2312_string(unsigned char y,unsigned char x, char *text);//-- y：0,1,2,3
 void display_string_5x7(unsigned char y,unsigned char x,unsigned char *text);
 void Display_Byte(unsigned char y,unsigned char x,unsigned char Num);		//-- y：0,1,2,3   x：0,1,2,3......15
 

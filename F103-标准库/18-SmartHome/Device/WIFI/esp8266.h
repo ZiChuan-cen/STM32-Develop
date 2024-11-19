@@ -1,8 +1,8 @@
 #ifndef __ESP8266_H
-#define __ESP8266_H	 
+#define __ESP8266_H
 #include "sys.h"
 
-extern unsigned char ESP8266_ConnectSta;	    		//-- wifi连接状态		
+extern unsigned char ESP8266_ConnectSta;	    		//-- wifi连接状态
 extern unsigned char ESP8266_SendNum;							//-- num对应AT指令
 extern unsigned char ESP8266_SendTime; 	    			//-- AT 指令发送时间间隔
 extern unsigned char ESP8266_SendFlag;						//-- wifi上传数据

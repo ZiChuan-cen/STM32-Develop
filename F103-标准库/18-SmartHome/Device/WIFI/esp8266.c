@@ -26,7 +26,7 @@ void ESP8266_UartSendData(void);
 
 void ESP8266_Init(void)
 {
-    usart3_Init(9600);
+  usart3_Init(9600);
 }
 
 
@@ -51,58 +51,59 @@ void ESP8266_Init(void)
 /*-----------------------------------热点连接---------------------------------------------*/
 void ESP8266_ConnectServer(void)
 {
-    if (ESP8266_ConnectSta == 0)
+  if (ESP8266_ConnectSta == 0)
     {
-        ESP8266_SendTime = 5;
-        switch (ESP8266_SendNum)
+      ESP8266_SendTime = 5;
+      switch (ESP8266_SendNum)
         {
         case  0:
-            USART1_SendString("AT\r\n");
-            break;
+          USART1_SendString("AT\r\n");
+          break;
         case  1:
-            USART1_SendString("AT+CWMODE=2\r\n");
-            break;
+          USART1_SendString("AT+CWMODE=2\r\n");
+          break;
         case  2:
-            USART1_SendString("AT+CWSAP=\"TendDaDianZi\",\"123456789\",4,0\r\n");
-            ESP8266_SendTime = 10;
-            break;
+          USART1_SendString("AT+CWSAP=\"TendDaDianZi\",\"123456789\",4,0\r\n");
+          ESP8266_SendTime = 10;
+          break;
         case  3:
-            USART1_SendString("AT+CIPMUX=1\r\n");
-            ESP8266_SendTime = 10;
-            break;
+          USART1_SendString("AT+CIPMUX=1\r\n");
+          ESP8266_SendTime = 10;
+          break;
         case  4:
-            USART1_SendString("AT+CIPSERVER=1,2000\r\n");
-            ESP8266_SendTime = 10;
-            break;
+          USART1_SendString("AT+CIPSERVER=1,2000\r\n");
+          ESP8266_SendTime = 10;
+          break;
         case  5:
-            ESP8266_ConnectSta = 1;
-            ESP8266_SendTime = 0;
-            ESP8266_SendNum = 0;
-            break;
+          ESP8266_ConnectSta = 1;
+          ESP8266_SendTime = 0;
+          ESP8266_SendNum = 0;
+          break;
         default:
-            break;
+          break;
         }
     }
-    else if (ESP8266_ConnectSta == 2)
+  else if (ESP8266_ConnectSta == 2)
     {
-        ESP8266_SendTime = 6;
-        switch (ESP8266_SendNum)
+      ESP8266_SendTime = 6;
+      switch (ESP8266_SendNum)
         {
         case  0:
-            USART1_SendString("AT+CIPSEND=0,49\r\n");
-            break;
+          USART1_SendString("AT+CIPSEND=0,49\r\n");
+          break;
         case  1:
-            ESP8266_UartSendData();
-            ESP8266_SendNum = 0;
-            break;
+          ESP8266_UartSendData();
+          ESP8266_SendNum = 0;
+          break;
         default:
-            break;
+          break;
         }
     }
 }
 
 
 /*-----------------------------------------TCP 服务器连接-------------------------------------------------*/
+/**
 //void ESP8266_ConnectServer()
 //{
 //      if(ESP8266_ConnectSta==0)
@@ -154,6 +155,8 @@ void ESP8266_ConnectServer(void)
 //              }
 //      }
 //}
+**/
+
 
 
 /*-----------------------------------------阿里云服务器连接----------------------------------------------------*/
@@ -243,53 +246,53 @@ void ESP8266_ConnectServer(void)
 void USART1_IRQHandler(void)
 {
 
-    if (USART_GetITStatus(USART1, USART_IT_RXNE)) // 中断标志
+  if (USART_GetITStatus(USART1, USART_IT_RXNE)) // 中断标志
     {
-        ESP8266_UartBuf[ESP8266_UartCount] = USART_ReceiveData(USART1);
-        ESP8266_UartCount = (ESP8266_UartCount + 1) % 50;
-        if (ESP8266_ConnectSta == 0)
+      ESP8266_UartBuf[ESP8266_UartCount] = USART_ReceiveData(USART1);
+      ESP8266_UartCount = (ESP8266_UartCount + 1) % 50;
+      if (ESP8266_ConnectSta == 0)
         {
-            if (ESP8266_UartCount >= 4 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'K' && ESP8266_UartBuf[ESP8266_UartCount - 4] == 'O') //-- OK
+          if (ESP8266_UartCount >= 4 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'K' && ESP8266_UartBuf[ESP8266_UartCount - 4] == 'O') //-- OK
             {
-                ESP8266_SendNum++;
+              ESP8266_SendNum++;
             }
-            else if (ESP8266_UartCount >= 7 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'R' && ESP8266_UartBuf[ESP8266_UartCount - 7] == 'E' && ESP8266_UartBuf[ESP8266_UartCount - 1] == '\n' && ESP8266_UartBuf[ESP8266_UartCount - 2] == '\r') //--ERROR
+          else if (ESP8266_UartCount >= 7 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'R' && ESP8266_UartBuf[ESP8266_UartCount - 7] == 'E' && ESP8266_UartBuf[ESP8266_UartCount - 1] == '\n' && ESP8266_UartBuf[ESP8266_UartCount - 2] == '\r') //--ERROR
             {
-                ESP8266_SendNum = 0;
+              ESP8266_SendNum = 0;
             }
 
         }
-        else if (ESP8266_ConnectSta == 1)
+      else if (ESP8266_ConnectSta == 1)
         {
-            if (ESP8266_UartCount >= 9 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'T' && ESP8266_UartBuf[ESP8266_UartCount - 9] == 'C')
+          if (ESP8266_UartCount >= 9 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'T' && ESP8266_UartBuf[ESP8266_UartCount - 9] == 'C')
             {
-                ESP8266_ConnectSta = 2;
+              ESP8266_ConnectSta = 2;
             }
         }
-        else if (ESP8266_ConnectSta == 2)
+      else if (ESP8266_ConnectSta == 2)
         {
-            if (ESP8266_UartCount >= 38 && ESP8266_UartBuf[ESP8266_UartCount - 33] == 'D' && ESP8266_UartBuf[ESP8266_UartCount - 31] == 'S' && ESP8266_UartBuf[ESP8266_UartCount - 22] == 'D')
+          if (ESP8266_UartCount >= 38 && ESP8266_UartBuf[ESP8266_UartCount - 33] == 'D' && ESP8266_UartBuf[ESP8266_UartCount - 31] == 'S' && ESP8266_UartBuf[ESP8266_UartCount - 22] == 'D')
             {
-                ESP8266_ConnectSta = 1;
-                ESP8266_SendNum = 0;
+              ESP8266_ConnectSta = 1;
+              ESP8266_SendNum = 0;
             }
-            else if (ESP8266_UartCount >= 2 && ESP8266_UartBuf[ESP8266_UartCount - 1] == '>')
+          else if (ESP8266_UartCount >= 2 && ESP8266_UartBuf[ESP8266_UartCount - 1] == '>')
             {
-                ESP8266_SendNum++;
+              ESP8266_SendNum++;
             }
-            else if (ESP8266_UartCount >= 7 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'R' && ESP8266_UartBuf[ESP8266_UartCount - 7] == 'E') //--ERROR
+          else if (ESP8266_UartCount >= 7 && ESP8266_UartBuf[ESP8266_UartCount - 3] == 'R' && ESP8266_UartBuf[ESP8266_UartCount - 7] == 'E') //--ERROR
             {
-                ESP8266_SendNum = 0;
+              ESP8266_SendNum = 0;
             }
         }
-        if (ESP8266_UartCount >= 4 && ESP8266_UartBuf[ESP8266_UartCount - 1] == '\n' && ESP8266_UartBuf[ESP8266_UartCount - 2] == '\r')
+      if (ESP8266_UartCount >= 4 && ESP8266_UartBuf[ESP8266_UartCount - 1] == '\n' && ESP8266_UartBuf[ESP8266_UartCount - 2] == '\r')
         {
-            ESP8266_UartReceive();
-            if (ESP8266_UartBuf[ESP8266_UartCount - 3] == 'Z')
+          ESP8266_UartReceive();
+          if (ESP8266_UartBuf[ESP8266_UartCount - 3] == 'Z')
             {
-                ESP8266_SendFlag = 1;
+              ESP8266_SendFlag = 1;
             }
-            ESP8266_UartCount = 0;
+          ESP8266_UartCount = 0;
         }
 
     }
